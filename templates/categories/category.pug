@@ -1,0 +1,11 @@
+perch:before
+    | <ul>
+
+li(style!='margin-left: <perch:category id="catDepth" type="hidden"/>0px;')
+    h4
+        perch:category(id="catTitle" type="smarttext" label="Title" required="true")/
+    perch:category(id="catSlug" type="slug" for="catTitle" suppress="true")/
+    perch:category(id="desc" type="textarea" label="Description" editor="markitup" markdown="true" size="s")/
+
+perch:after
+    | </ul>

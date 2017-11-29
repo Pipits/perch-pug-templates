@@ -1,0 +1,41 @@
+perch:before
+  | <table class="table table-bordered">
+
+
+tr
+  th
+    perch:shop(id="addressFirstName")/
+    |  
+    perch:shop(id="addressLastName")/
+    perch:if(exists="addressCompany")
+      | <br/>
+      perch:shop(id="addressCompany")/
+      
+  td
+    perch:if(exists="address_1")
+      perch:shop(id="address_1")/
+      | <br/>
+
+    perch:if(exists="address_2")
+      perch:shop(id="address_2")/
+      | <br/>
+
+    perch:if(exists="city")
+      perch:shop(id="city")/
+      | <br/>
+
+    perch:if(exists="county")
+      perch:shop(id="county")/
+      | <br/>
+
+    perch:if(exists="postcode")
+      perch:shop(id="postcode")/
+      | <br/>
+
+    perch:if(exists="country_name")
+      perch:shop(id="country_name")/
+      | <br/>
+
+
+perch:after
+  | </table>

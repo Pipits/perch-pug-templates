@@ -1,0 +1,12 @@
+- var classes = '<perch:if exists="current_page">selected</perch:if><perch:if exists="ancestor_page"> ancestor</perch:if>'
+
+perch:before
+  | <ul>
+  
+li(class!=classes)
+  a(href!='<perch:pages id="pagePath" />')
+    perch:pages(id="pageNavText")/
+  perch:pages(id="subitems" encode="false")/
+
+perch:after
+  | </ul>

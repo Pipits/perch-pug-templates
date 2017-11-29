@@ -1,0 +1,13 @@
+perch:before
+  | <ul class="breadcrumbs">
+  
+li
+  perch:if(exists="perch_item_last")
+    perch:pages(id="pageNavText")/
+    perch:else/
+    a(href!='<perch:pages id="pagePath" />')
+      perch:pages(id="pageNavText")/
+    | &gt;
+    
+perch:after
+  | </ul>

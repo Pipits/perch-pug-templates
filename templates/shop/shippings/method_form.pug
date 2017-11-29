@@ -1,0 +1,14 @@
+perch:form(id="shipping_method" method="post" app="perch_shop")
+  h4 Shhipping method
+
+  perch:error(for="all" type="login")
+    p(class="error") Sorry, there was a problem.
+
+  div
+    perch:label(for="shipping") Method
+    perch:input(type="select" options!='<perch:shop id="shippings_list" />' id="shipping" required="true" placeholder="Please choose")/
+    perch:error(for="shipping") Required
+    
+  div
+    perch:input(type="submit" id="submit" value="OK!")/
+    perch:input(type="hidden" id="r")/

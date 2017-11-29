@@ -1,0 +1,14 @@
+perch:before
+  h3 Archive by Date
+  | <ul>
+
+li
+  a(href!='archive.php?year=<perch:blog id="year" />')
+    | (
+    perch:blog(id="year_qty")/
+    | )
+    
+  perch:blog(id="months" encode="false")/
+    
+perch:after
+  | </ul>

@@ -1,0 +1,69 @@
+- var prevURL = '<perch:search id="prev_url" type="hidden" encode="false" />'
+- var nextURL = '<perch:search id="next_url" type="hidden" encode="false" />'
+
+perch:before
+  h1
+    | Search results for &#8220;
+    perch:serch(id="search_key")/
+    | &#8221;
+    
+  perch:if(exists="paging")
+    p
+      perch:search(id="total")/
+      |  results
+      
+  | <ul>
+
+
+  
+li(class!='<perch:search id="perch_item_odd" />')
+  h2
+    a(href!='<perch:search id="result_url" />')
+      perch:search(id="result_title")/
+
+  perch:if(exists="result_excerpt")
+    p(class="excerpt")
+      | &hellip;
+      perch:search(id="result_excerpt" encode="false")/
+      | &hellip;
+
+  p
+    a(href!='<perch:search id="result_url" />')
+      perch:if(exists="result_pageNavText")
+        perch:search(id="result_pageNavText")/
+        perch:else/
+        perch:search(id="result_url")/
+
+
+		
+perch:after
+  | </ul>
+  
+  perch:if(exists="paging")
+    .paging
+      | Page 
+      perch:search(id="current_page" type="hidden")/
+      |  of 
+      perch:search(id="number_of_pages" type="hidden" )/
+    
+      perch:if(exists="not_first_page")
+        a(href!=prevURL) Previous
+
+      perch:if(exists="not_last_page")
+        a(href!=nextURL) Next
+
+
+		
+perch:noresults
+  perch:if(exists="search_key")
+    h1
+      | Search results for &#8220;
+      perch:serch(id="search_key")/
+      | &#8221;
+    perch:else/
+    h1 Search
+    
+  perch:if(exists="search_key")
+    p
+      | Sorry, there are no results for &#8220;
+      perch:search(id="search_key")/

@@ -1,0 +1,13 @@
+- var url = '/shop/brands/<perch:shop id="slug" type="slug" />/'
+
+perch:before
+  | <ul>
+  
+li
+  a(href!=url)
+    perch:shop(id="title" type="text")/
+  
+  perch:shop(id="image" type="image" label="Image" width="800" output="tag")/
+  
+perch:after
+  | </ul>

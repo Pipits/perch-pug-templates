@@ -1,0 +1,92 @@
+perch:form(id="address" method="post" app="perch_shop")
+  fieldset
+    legend Address
+    
+    div
+      perch:label(for="first_name") First Name
+      perch:input(type="text" id="first_name" required="true" label="First name")/
+      perch:error(for="first_name" type="required") Please add a name
+
+    div
+      perch:label(for="last_name") Last Name
+      perch:input(type="text" id="last_name" required="true" label="Last name")/
+      perch:error(for="last_name" type="required") Please add a name
+      
+    div
+      perch:label(for="company") Company
+      perch:input(type="text" id="company" label="Company")/
+      
+    div
+      perch:label(for="address_1") Address 1
+      perch:input(type="text" id="address_1" required="true" label="Address 1")/
+      perch:error(for="address_1" type="required") Please add the first line of the address
+      
+    div
+      perch:label(for="address_2") Address 2
+      perch:input(type="text" id="address_2" label="Address 2")/
+
+    div
+      perch:label(for="postcode") Postal code
+      perch:input(type="text" id="postcode" label="Postal code")/
+      
+    div
+      perch:label(for="city") City
+      perch:input(type="text" id="city" label="City")/
+      
+    div
+      perch:label(for="county") State or County
+      perch:input(type="text" id="county" label="County")/
+      
+    div
+      perch:label(for="country") Country
+      perch:form(id="address" method="post" app="perch_shop")
+  fieldset
+    legend Address
+    
+    div
+      perch:label(for="first_name") First Name
+      perch:input(type="text" id="first_name" required="true" label="First name")/
+      perch:error(for="first_name" type="required") Please add a name
+
+    div
+      perch:label(for="last_name") Last Name
+      perch:input(type="text" id="last_name" required="true" label="Last name")/
+      perch:error(for="last_name" type="required") Please add a name
+      
+    div
+      perch:label(for="company") Company
+      perch:input(type="text" id="company" label="Company")/
+      
+    div
+      perch:label(for="address_1") Address 1
+      perch:input(type="text" id="address_1" required="true" label="Address 1")/
+      perch:error(for="address_1" type="required") Please add the first line of the address
+      
+    div
+      perch:label(for="address_2") Address 2
+      perch:input(type="text" id="address_2" label="Address 2")/
+
+    div
+      perch:label(for="postcode") Postal code
+      perch:input(type="text" id="postcode" label="Postal code")/
+      
+    div
+      perch:label(for="city") City
+      perch:input(type="text" id="city" label="City")/
+      
+    div
+      perch:label(for="county") State or County
+      perch:input(type="text" id="county" label="County")/
+      
+    div
+      perch:label(for="country") Country
+      perch:input(type="select" id="country" label="Country" value="GB" options!='<perch:shop id="country_list" />')/
+      
+      
+  div
+    perch:input(type="submit" value="Update" class="btn btn-primary")/
+    perch:input(type="hidden" id="addressID")/
+    perch:input(type="hidden" id="r" value="/shop/addresses")/
+    
+  perch:success
+    p Thanks!

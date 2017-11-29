@@ -1,0 +1,26 @@
+perch:shop(id="title" type="text" label="Title" required="true")/
+perch:shop(id="description" type="textarea" label="Description" editor="markitup" markdown="true" size="xs")/
+
+perch:shop(id="from" type="date" time="true" label="Valid from" required="true")/
+perch:shop(id="to" type="date" time="true" label="Valid to" required="true")/
+perch:shop(id="active" type="shop_bool" label="Enabled" value="1" suppress="true")/
+
+perch:shop(id="action" type="shop_promo_action" label="Action" divider-before="Details")/
+perch:shop(id="discount_code" type="text" label="Discount code" size="m")/
+
+perch:categories(id="categories" label="Applies to products in category" set="products" runway="true")/
+
+perch:shop(id="amount_percent" type="number" step="1" max="100" min="0" label="Discount percentage" size="s" divider-before="Discount amounts" notes-before="Discounts are applied before tax.")/
+perch:shop(id="amount" type="shop_currency_value" step="0.01" label="Discount amount" size="s" pretax="true")/
+perch:shop(id="trigger_value" type="shop_currency_value" label="Trigger value" size="s")/
+perch:shop(id="max_discount" type="shop_currency_value" step="0.01" label="Maximum discount" pretax="true" size="s")/
+
+perch:shop(id="max_uses" type="number" label="Maximum total uses" size="s" divider-before="Usage")/
+perch:shop(id="customer_uses" type="number" label="Uses per customer" size="s")/
+
+perch:shop(id="terminating" type="shop_bool" label="Terminate" help="Stop processing further promotions if this one matches")/
+perch:shop(id="persistent" type="shop_bool" label="Persistent" help="Apply this even if another promo stops the processing")/
+perch:shop(id="priority" type="number" label="Priority" step="1" size="s")/
+
+perch:shop(id="apply_to_shipping" type="shop_bool" label="Apply to shipping" required="true" divider-before="Shipping")/
+perch:shop(id="shipping_methods" type="shop_shipping" label="Shipping methods" display-as="checkboxes")/

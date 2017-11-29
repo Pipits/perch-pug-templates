@@ -1,0 +1,31 @@
+- image = '<perch:blog id="author_image" type="image" label="Image" width="240" height="240" crop="true" density="2" />'
+- imageAlt = '<perch:blog id="authorGivenName" type="text" label="Given name" /> <perch:blog id="authorFamilyName" type="text" label="Family name" />'
+- url = '/blog/archive.php?author=<perch:blog id="authorSlug" type="text" />'
+
+perch:bfore
+  | <ul class="listing">
+  
+li.author
+  perch:if(exists="author_image")
+    img(src!=image width="120" height="120" alt!=imageAlt)
+  
+  div.author
+    h2
+      a(href!=url)
+        perch:blog(id="authorGivenName" type="text" label="Given name")/
+        |  
+        perch:blog(id="authorFamilyName" type="text" label="Family name")/
+        
+    perch:blog(id="author_biog" type="textarea" label="Biography" textile="true" editor="markitup")/
+
+    p
+      a(href!=url)
+        perch:blog(id="authorPostCount")/
+        |  
+        perch:if(id="authorPostCount" match="gt" value="1")
+          |  posts
+          perch:else/
+          |  post
+
+perch:after
+  | </ul>

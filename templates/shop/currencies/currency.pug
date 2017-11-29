@@ -1,0 +1,12 @@
+perch:shop(id="currencyTitle" type="text" size="l" label="Name" required="true")/
+perch:shop(id="currencyCode" type="text" size="s" label="Currency code" required="true")/
+perch:shop(id="currencyActive" type="checkbox" value="1" label="Enabled")/
+
+perch:shop(id="currencySymbol" type="text" size="s" label="Symbol" required="true" divider-before="Formatting")/
+perch:shop(id="currencySymbolPosition" type="shop_currency_symbol_position" label="Symbol position" required="true")/
+
+perch:shop(id="currencyDecimals" type="number" size="s" label="Decimal places for formatting" step="1" min="0" default="2" )/
+perch:shop(id="currencyDecimalSeparator" type="text" label="Decimal point character" required="true" size="s")/
+perch:shop(id="currencyThousandsSeparator" type="text" label="Thousands character" required="true" size="s")/
+
+perch:shop(id="currencyRate" type="number" size="s" label="Exchange rate" help="Against reporting currency" step="0.001" min="0" default="1.0000" divider-before="Reporting")/

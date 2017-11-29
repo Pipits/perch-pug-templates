@@ -1,0 +1,8 @@
+perch:form(id="currency" method="post" app="perch_shop")
+  div
+    label(for="currency") Currency
+    perch:input(type="select" id="currency" options!='<perch:shop id="currency_list" />' required="true")/
+    perch:error(for="currency" type="required") Required
+    
+    perch:input( type="submit" id="submit" value="OK!")/
+    perch:input(type="hidden" id="r")/

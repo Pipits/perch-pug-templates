@@ -1,0 +1,10 @@
+perch:before
+  h3 Categories
+  | <ul>
+  
+li
+  a(href!='archive.php?cat=<perch:category id="catSlug" />')
+    perch:category(id="catTitle")/
+
+perch:after
+  | </ul>

@@ -1,0 +1,38 @@
+- var imgSrc = '<perch:blog id="image" type="image" width="50" height="50" crop="true" />'
+
+perch:before
+  | <ul class="hfeed listing">
+  
+li.hentry
+  h2
+    a.entry-title(href!='<perch:blog id="postURL" />')
+      perch:blog(id="postTitle")/
+      
+  perch:if(exists="image")
+    img(src!=imgSrc alt!='<perch:blog id="postTitle" />')
+    
+  p.entry-published.date
+    perch:blog(id="postDateTime" format="%d %B %Y")/
+    
+  div.description.entry-summary
+    perch:blog(id="excerpt" type="textarea" textile="true")/
+    p Comments: 
+      perch:blog(id="postCommentCount")/
+      
+perch:after
+  | </ul>
+  
+  perch:if(exists="paging")
+    div.paging
+      | Page 
+      perch:blog(id="current_page")/
+      |  
+      | of 
+      perch:blog(id="number_of_pages")/
+      perch:blog(id="page_links" encode="false")/
+      
+      perch:if(exists="not_first_page")
+        a(href!='<perch:blog id="prev_url" encode="false" />') Previous
+      
+      perch:if(exists="not_last_page")
+        a(href!='<perch:blog id="next_url" encode="false" />') Next

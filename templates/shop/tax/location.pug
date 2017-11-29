@@ -1,0 +1,12 @@
+perch:shop(id="locationTitle" type="text" required="true" label="Title")/
+perch:shop(id="countryID" type="shop_country" label="Country" allowempty="true")/
+perch:shop(id="locationIsHome" type="checkbox" default="0" value="1" label="Home location" help="This is the location the shop trades from")/
+perch:shop(id="locationIsDefault" type="checkbox" default="0" value="1" label="Default location" help="Use this location as a catch-all if no others match")/
+
+
+<!--* Don't change this repeater - it's needed for editing tax rates. *-->
+perch:repeater(id="rates" label="Tax rates")
+  perch:shop(id="title" type="text" label="Title" placeholder="e.g. Standard" required="true")/
+  perch:shop(id="rate" type="number" min="0" max="99.99" step="0.1" label="Rate %" size="s" required="true")/
+  perch:shop(id="id" type="editcontrol" edit-control="true")/
+<!--* / don't change *-->

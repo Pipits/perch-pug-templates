@@ -1,0 +1,12 @@
+perch:before
+  h3 Categories
+  | <ul>
+  
+li
+  a(href!='archive.php?cat=<perch:category id="catSlug" />')
+    perch:category(id="catTitle")/
+    |  
+    perch:category(id="count.blog.post" when-empty="0")/
+
+perch:after
+  | </ul>

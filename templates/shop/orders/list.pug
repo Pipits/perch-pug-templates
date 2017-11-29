@@ -1,0 +1,28 @@
+perch:before
+  | <table>
+  thead
+    tr
+      th Order
+      th Date
+      th Total
+      th Status
+  | <tbody>
+  
+tr
+  td
+    a(href!='/orders/<perch:shop id="orderID" escape="true" />')
+      perch:shop(id="orderInvoiceNumber")/
+      
+  td
+    perch:shop(id="orderCreated" type="date" format="d F Y H:i")/
+    
+  td
+    perch:shop(id="orderTotal")/
+    
+  td
+    perch:shop(id="orderStatus" format="UC")/
+
+
+perch:after
+  | </tbody>
+  | </table>

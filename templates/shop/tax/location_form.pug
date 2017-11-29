@@ -1,0 +1,14 @@
+perch:form(id="location" method="post" app="perch_shop")
+  h1 Please choose your location
+  
+  perch:error(for="all" type="login")
+    p(class="error") Sorry, there was a problem.
+    
+  div
+    perch:label(for="location") Location
+    perch:input(type="select" options!='<perch:shop id="locations_list" />' id="location" required="true" )/
+    perch:error(for="location" type="required") Required
+	
+  div
+    perch:input(type="submit" id="submit" value="OK!")/
+    perch:input(type="hidden" id="r")/

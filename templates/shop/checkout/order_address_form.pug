@@ -1,0 +1,57 @@
+perch:form(id="order_address" method="post" app="perch_shop")
+  h4 Shipping address
+  
+  perch:addresses
+    div
+      label
+        perch:input(type="radio" id="shipping" value!='<perch:address id="addressSlug" />')/
+        perch:address(id="addressFirstName")/
+        |  
+        perch:address(id="addressLastName")/
+        |  
+        perch:address(id="addressCompany")/
+        br/
+        perch:address(id="address_1")/
+        |  
+        perch:address(id="address_2")/
+        br/
+        perch:address(id="city")/
+        |  
+        perch:address(id="city")/
+        |  
+        perch:address(id="county")/
+        |  
+        perch:address(id="postcode")/
+        |  
+        perch:address(id="country_name")/
+
+
+  h4 Billing address
+
+  perch:addresses
+    div
+      label
+        perch:input(type="radio" id="billing" value!='<perch:address id="addressSlug" />')/
+        perch:address(id="addressFirstName")/
+        |  
+        perch:address(id="addressLastName")/
+        |  
+        perch:address(id="addressCompany")/
+        br/
+        perch:address(id="address_1")/
+        |  
+        perch:address(id="address_2")/
+        br/
+        perch:address(id="city")/
+        |  
+        perch:address(id="city")/
+        |  
+        perch:address(id="county")/
+        |  
+        perch:address(id="postcode")/
+        |  
+        perch:address(id="country_name")/
+
+  div
+    perch:input(type="submit" id="submit" value="OK!")/
+    perch:input(type="hidden" id="r")/

@@ -1,0 +1,24 @@
+- var imgSrc = '//www.gravatar.com/avatar/<perch:blog id="commentEmail" type="email" label="Email" order="2" hash="md5" required="true" />?s=120&amp;d=mm'
+
+perch:before
+  h2 Comments and responses
+  | <ul class="comments listing">
+  
+li(id!='comment<perch:blog id="commentID" type="hidden" />')
+  img(src!=imgSrc width="60" height="60")
+  div.comment
+    div.commenter
+      perch:if(exists="commentURL")
+        | <a href="<perch:blog id="commentURL" type="url" label="URL" order="3" />">
+      strong
+        perch:blog(id="commentName" type="text" label="Name" order="1" required="true")/
+      perch:if(exists="commentURL")
+        | </a>
+        
+    p(rel="bookmark" class="date")
+      perch:blog(id="commentDateTime" format="%d %b %Y %X" type="date" time="true" label="Date")/
+    
+    perch:blog(id="commentHTML" encode="false" html="true" type="textarea" label="Message (HTML)" order="4")/
+
+perch:after
+  | </ul>

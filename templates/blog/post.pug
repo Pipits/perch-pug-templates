@@ -1,0 +1,35 @@
+- var dateTime = '<perch:blog id="postDateTime" type="date" label="Date" time="true" format="Y-m-d H:i:s" divider-before="Publishing" />'
+- var postURL = '<perch:blog id="postURL" type="hidden" />'
+- var catURL = 'archive.php?cat=<perch:category id="catSlug" type="slug" />'
+- var imgSrc = '<perch:blog id="image" type="image" width="320" height="240" crop="true" label="Image" order="4" />'
+
+article.h-entry
+  h1
+    a.p-name(href!=postURL rel="bookmark")
+      perch:blog(id="postTitle" type="text" label="Title" required="true" size="xl autowidth" order="1")/
+      
+  p.meta
+    time.dt-published(datetime!=dateTime)
+      perch:blog(id="postDateTime" type="date" time="true" format="%d %B %Y")/
+      
+    perch:if(exists="authorGivenName")
+      | by
+      span.p-author.h-card
+        perch:blog(id="authorGivenName" type="hidden")/
+        |  
+        perch:blog(id="authorFamilyName" type="hidden")/
+        
+    perch:categories(id="categories" set="blog" label="Categories" display-as="checkboxes")
+      a.p-category(href!=catURL)
+        perch:category(id="catTitle" type="text")/
+        
+  perch:if(exists="image")
+    div
+      img(src!=imgSrc alt!='<perch:blog id="postTitle" />')
+        
+  div.description.e-content
+    perch:blog(id="postDescHTML" type="textarea" label="Post" order="2" editor="markitup" markdown="true" size="xxl autowidth" required="true")/
+
+
+perch:blog(id="excerpt" type="textarea" label="Excerpt" markdown="true" order="3" suppress="true" size="s")/
+perch:blog(id="image" type="image" width="50" height="50" crop="true" suppress="true")/
